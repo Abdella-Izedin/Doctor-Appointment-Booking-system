@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: Outfit;
+}
+
+.active hr {
+    @apply block
+}
+
+@media (max-width:740px) {
+    .active  p{
+       @apply text-white bg-primary
+    }
+}
+
+::-webkit-scrollbar {
+    @apply hidden
+}
+
+
+/* الوضع الفاتح */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* الوضع الداكن */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* إعدادات إضافية للعناصر */
+button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+body.dark-mode button {
+    border-color: white;
+    color: white;
+}
+
+body.light-mode button {
+    border-color: black;
+    color: black;
+}
+
+
+
+/* زر تبديل الوضع الداكن */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f0f0f0; /* لون الخلفية في الوضع الفاتح */
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #333; /* لون الخلفية في الوضع الداكن */
+    color: #f0f0f0;
+}
+
+#theme-toggle:hover {
+    opacity: 0.8;
+}
